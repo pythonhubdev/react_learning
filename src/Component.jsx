@@ -1,8 +1,10 @@
 const CustomComponent = () => {
     return (
-        <>
+        <div>
             <h1>My first react component</h1>
-        </>
+            {/* We can add more and more components here to make a complex component. */}
+            <p>A short description for my custom component</p>
+        </div>
     );
 }
 
