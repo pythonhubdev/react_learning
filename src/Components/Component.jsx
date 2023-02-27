@@ -1,4 +1,3 @@
-import {Component} from "react";
 import "./Component.css"; // Importing CSS files
 
 // To add basic styling to a component, we can use inline styles. Inline styles are not recommended for complex styling.
@@ -7,18 +6,16 @@ import "./Component.css"; // Importing CSS files
 // To add complex styling to a component, we can use CSS files. We can import the CSS file in the component file.
 // Example: import "./Component.css";
 
-class CustomComponent extends Component {
-    render() {
-        return (
-            <div>
-                {/* Applying inline CSS for the h1 component */}
-                <h1 style={{color: "red"}}>My first react component</h1>
-                {/* We can add more and more components here to make a complex component. */}
-                {/* Applying CSS class for the p component */}
-                <p className="short-description">A short description for my custom component</p>
-            </div>
-        );
-    }
+const CustomComponent = () => {
+    return (
+        <div>
+            {/* Applying inline CSS for the h1 component */}
+            <h1 style={{color: "red"}}>My first react component</h1>
+            {/* We can add more and more components here to make a complex component. */}
+            {/* Applying CSS class for the p component */}
+            <p className="short-description">A short description for my custom component</p>
+        </div>
+    );
 }
 
 const OtherComponent = () => {
