@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import CComponent, {OtherComponent} from "./Component";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+
+        <div>
+            {/*
+                Here I am importing CustomComponent as CComponent.
+                But this will work because I have exported default in Component.jsx
+            */}
+            <CComponent/>
+            {/*
+                Here I am importing OtherComponent.
+                But this will not work if I have used a custom name while importing because this is not exported as default
+            */}
+            <OtherComponent/>
+        </div>
+    )
+        ;
 }
 
 export default App;
