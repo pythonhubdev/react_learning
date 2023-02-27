@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with React
 
 This is an open-source project where I'll be tracking my day-to-day progress in learning React.
 The repository contains a series of commits, each one representing a step forward in my learning process.
