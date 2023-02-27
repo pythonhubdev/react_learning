@@ -1,5 +1,5 @@
 import './App.css';
-import CComponent, {OtherComponent} from "./Component";
+import CComponent, {OtherComponent} from "./Components/Component";
 
 function App() {
     return (
