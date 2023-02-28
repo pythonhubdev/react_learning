@@ -1,46 +1,81 @@
 import "./Component.css";
-import {useState} from "react"; // Importing CSS files
+import {useState} from "react";
 
-const StateComponent = (props) => {
+const FormComponent = () => {
 
-    /*
-        A State is a piece of data that is stored in the component and can be changed.
-        A component's memory is called state.
-        Hooks are used to manage state in functional components.
-        Hooks must be called at the top level of the function component not inside if/else/for/while or any other block.
-    */
 
-    /*
-        Hooks are functions that let you “hook into” React state and lifecycle features from function components.
-        Hooks start with the word 'use'.
-        There are different types of hooks.
-        For example, useState, useEffect, useContext, useReducer, etc.
-        Can write custom hooks to reuse stateful logic, and the name of the custom hook must start with use.
-     */
+    // Using useState hook to set the state of the form values
+    // Using multiple useState hooks to set the state of the input fields
 
-    // React registers separate states for each component. And each state is independent of other states.
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    /*
-        useState
-            1. useState can be initialized with a default value.
-            2. useState return an array with two elements.
-            3. The first element is the state variable.
-            4. The second element is a function that can be used to update the state variable.
-     */
 
-    const [title, setTitle] = useState("Before state change");
+    // Using single useState hook to set the state of the form values
 
-    const handleClick = () => {
-        setTitle("After state change");
+    // const [formValues, setFormValues] = useState({
+    //     username: "",
+    //     password: ""
+    // });
+
+
+    // Getting form values using event.target.value
+
+    const usernameHandler = (event) => {
+        setUsername(event.target.value);
+
+        // Using single useState hook to set the state of the form values
+        // setFormValues(
+        //     {
+        //         ...formValues,
+        //         username: event.target.value
+        //     }
+        // )
+    }
+
+    const passwordHandler = (event) => {
+        setPassword(event.target.value);
+
+        // Using single useState hook to set the state of the form values
+        // setFormValues(
+        //     {
+        //         ...formValues,
+        //         password: event.target.value
+        //     }
+        // )
+    }
+
+    const handleSubmit = () => {
+        alert("Form submitted with username: " + username);
     }
 
     return (
-        <div>
-            <div>
-                <p>{title}</p>
-                {props.children}
-                <button
-                    onClick={handleClick}>Function Block Click
+        <div className="form">
+            <div className={"row"}>
+                <label htmlFor="username" className={"form-label"}>Name</label>
+                <input
+                    className="form-input"
+                    id="username"
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={usernameHandler}
+                />
+            </div>
+            <div className={"row"}>
+                <label htmlFor="password" className={"form-label"}>Password</label>
+                <input
+                    className="form-input"
+                    id="password"
+                    type="text"
+                    name="password"
+                    value={password}
+                    onChange={passwordHandler}
+                />
+            </div>
+            <div className={"row"}>
+                <button onClick={handleSubmit}>
+                    Submit
                 </button>
             </div>
         </div>
@@ -48,6 +83,6 @@ const StateComponent = (props) => {
 }
 
 
-export default StateComponent;
+export default FormComponent;
 
 
