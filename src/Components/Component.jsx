@@ -11,6 +11,14 @@ const StateComponent = (props) => {
     */
 
     /*
+        Hooks are functions that let you “hook into” React state and lifecycle features from function components.
+        Hooks start with the word 'use'.
+        There are different types of hooks.
+        For example, useState, useEffect, useContext, useReducer, etc.
+        Can write custom hooks to reuse stateful logic, and the name of the custom hook must start with use.
+     */
+
+    /*
         useState
             1. useState can be initialized with a default value.
             2. useState return an array with two elements.
