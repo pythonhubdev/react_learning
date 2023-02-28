@@ -18,6 +18,8 @@ const StateComponent = (props) => {
         Can write custom hooks to reuse stateful logic, and the name of the custom hook must start with use.
      */
 
+    // React registers separate states for each component. And each state is independent of other states.
+
     /*
         useState
             1. useState can be initialized with a default value.
