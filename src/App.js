@@ -4,11 +4,18 @@ import CComponent from "./Components/Component";
 function App() {
     return (
         <div>
-            {/* Passing dynamic data via react props */}
-            <CComponent title={"Passing title via props"}/>
+            {/*Wrapping the children component with the CComponent.
+            Since we are using the children prop, we can pass* any component as a child to the CComponent */}
+            <CComponent>
+                <ChildrenComponent/>
+            </CComponent>
         </div>
     )
         ;
+}
+
+const ChildrenComponent = () => {
+    return <p>This is a children component</p>;
 }
 
 export default App;
