@@ -1,40 +1,35 @@
-import "./Component.css"; // Importing CSS files
+import "./Component.css";
+import {useState} from "react"; // Importing CSS files
 
+const StateComponent = (props) => {
 
-const CustomComponent = (props) => {
+    /*
+        A State is a piece of data that is stored in the component and can be changed.
+        A component's memory is called state.
+        Hooks are used to manage state in functional components.
+        Hooks must be called at the top level of the function component not inside if/else/for/while or any other block.
+    */
+
+    /*
+        useState
+            1. useState can be initialized with a default value.
+            2. useState return an array with two elements.
+            3. The first element is the state variable.
+            4. The second element is a function that can be used to update the state variable.
+     */
+
+    const [title, setTitle] = useState("Before state change");
 
     const handleClick = () => {
-        // Passing a function to the onClick attribute
-        console.log("Simple click");
-        alert("Simple click");
+        setTitle("After state change");
     }
 
     return (
         <div>
             <div>
+                <p>{title}</p>
                 {props.children}
-                {/*
-                    With the help of JSX syntax,
-                    you will be able to add function to a native HTML element via the custom attributes provided via React
-                */}
                 <button
-                    onClick={
-                        () => {
-                            // Passing an anonymous function to the onClick attribute
-                            console.log("Simple click");
-                            alert("Simple click");
-                        }
-                    }>Anonymous click
-                </button>
-                {/*
-                    When using JSX code, it's important to keep in mind that the code will be parsed before the
-                    browser renders the page. Therefore, it's recommended that you pass the function name as a
-                    reference instead of calling the function directly. This can help improve the efficiency and
-                    performance of your code. By passing the function name, you ensure that the function is only
-                    called when it's actually needed, rather than being called unnecessarily during the parsing stage.
-                 */}
-                <button
-
                     onClick={handleClick}>Function Block Click
                 </button>
             </div>
@@ -43,6 +38,6 @@ const CustomComponent = (props) => {
 }
 
 
-export default CustomComponent;
+export default StateComponent;
 
 

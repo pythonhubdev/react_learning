@@ -1,12 +1,12 @@
 import './App.css';
-import CComponent from "./Components/Component";
+import StateComponent from "./Components/Component";
 
 function App() {
     return (
         <div>
-            <CComponent>
+            <StateComponent>
                 <ChildrenComponent/>
-            </CComponent>
+            </StateComponent>
         </div>
     )
         ;
