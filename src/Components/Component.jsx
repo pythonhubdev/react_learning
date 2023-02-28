@@ -7,46 +7,24 @@ const FormComponent = () => {
     // Using useState hook to set the state of the form values
     // Using multiple useState hooks to set the state of the input fields
 
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [formValues, setFormValues] = useState({
+        username: "",
+        password: ""
+    });
 
 
-    // Using single useState hook to set the state of the form values
-
-    // const [formValues, setFormValues] = useState({
-    //     username: "",
-    //     password: ""
-    // });
+    // Using functional state update to update the state of the input fields based on previous state
 
 
-    // Getting form values using event.target.value
-
-    const usernameHandler = (event) => {
-        setUsername(event.target.value);
-
-        // Using single useState hook to set the state of the form values
-        // setFormValues(
-        //     {
-        //         ...formValues,
-        //         username: event.target.value
-        //     }
-        // )
+    const handleFormInputs = (event) => {
+        setFormValues((previousFormState) => {
+            return {...previousFormState, [event.target.name]: event.target.value};
+        });
     }
 
-    const passwordHandler = (event) => {
-        setPassword(event.target.value);
-
-        // Using single useState hook to set the state of the form values
-        // setFormValues(
-        //     {
-        //         ...formValues,
-        //         password: event.target.value
-        //     }
-        // )
-    }
 
     const handleSubmit = () => {
-        alert("Form submitted with username: " + username);
+        alert("Form submitted with username: " + formValues.username);
     }
 
     return (
@@ -58,8 +36,8 @@ const FormComponent = () => {
                     id="username"
                     type="text"
                     name="username"
-                    value={username}
-                    onChange={usernameHandler}
+                    value={formValues.username}
+                    onChange={handleFormInputs}
                 />
             </div>
             <div className={"row"}>
@@ -69,8 +47,8 @@ const FormComponent = () => {
                     id="password"
                     type="text"
                     name="password"
-                    value={password}
-                    onChange={passwordHandler}
+                    value={formValues.password}
+                    onChange={handleFormInputs}
                 />
             </div>
             <div className={"row"}>
