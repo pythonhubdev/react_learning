@@ -38,21 +38,23 @@ const ListComponent = () => {
         <div className="wrapper">
             <div className="list-container">
 
-                {/*
-                    In the map function, we are looping through the content array and for each item in the array,
-                    we are returning a div with the class name list-item.
-                    We are also passing a key to the div, which is the index of the item in the array.
-                    (We can see about keys in React later, but for reference you can check out here: https://reactjs.org/docs/lists-and-keys.html)
-                    With the help of the map function, we are able to render the content array in the browser without having to write the code for each item in the array.
-                */}
-
                 {
                     statefulContent.map((item, index) => (
                         <div className="list-item" key={index}>
                             <img src={item.image} alt={"A sky scenery"}/>
                             <div className={"item-content"}>
-                                <h2>{item.title}</h2>
-                                <p>{item.description}</p>
+                                {/*
+                                    We are using a ternary operator to check if the title is equal to "Title 3".
+                                    This is called conditional rendering.
+                                */}
+                                {
+                                    item.title !== "Title 3" ?
+                                        <div>
+                                            <h2>{item.title}</h2>
+                                            <p>{item.description}</p>
+                                        </div> :
+                                        <h2>{item.title}</h2>
+                                }
                             </div>
                         </div>
                     ))
