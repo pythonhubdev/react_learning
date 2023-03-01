@@ -1,9 +1,9 @@
 import './App.css';
-import FormComponent from "./Components/Component";
+import ListComponent from "./Components/Component";
 
 function App() {
     return (
-        <FormComponent/>
+        <ListComponent/>
     );
 }
 
