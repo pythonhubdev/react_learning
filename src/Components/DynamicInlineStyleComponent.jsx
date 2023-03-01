@@ -1,4 +1,4 @@
-import "./Component.css";
+import "./DynamicInlineStyleComponent.css";
 import {useState} from "react";
 
 const content = [
@@ -19,7 +19,7 @@ const content = [
     }
 ];
 
-const ListComponent = () => {
+const DynamicInlineStylingComponent = () => {
 
 
     // We are using the useState hook to create a stateful variable called statefulContent that contains a list.
@@ -44,17 +44,20 @@ const ListComponent = () => {
                             <img src={item.image} alt={"A sky scenery"}/>
                             <div className={"item-content"}>
                                 {/*
-                                    We are using a ternary operator to check if the title is equal to "Title 3".
-                                    This is called conditional rendering.
+                                    Adding dynamic styling with the help of the ternary operator.
                                 */}
-                                {
-                                    item.title !== "Title 3" ?
-                                        <div>
-                                            <h2>{item.title}</h2>
-                                            <p>{item.description}</p>
-                                        </div> :
-                                        <h2>{item.title}</h2>
-                                }
+                                <div>
+                                    <h2 style={{color: item.title !== "Title 3" ? "white" : "red"}}>{item.title}</h2>
+
+                                    {/*
+                                        Setting the class name dynamically with the help of the ternary operator
+                                        / conditional rendering.
+                                    */}
+                                    <p className=
+                                           {`${item.description === "Description 1" ? "valid-desc" : "invalid-desc"}`}
+                                    >{item.description}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ))
@@ -69,6 +72,6 @@ const ListComponent = () => {
 }
 
 
-export default ListComponent;
+export default DynamicInlineStylingComponent;
 
 

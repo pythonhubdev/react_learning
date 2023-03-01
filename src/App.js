@@ -1,9 +1,13 @@
 import './App.css';
-import ListComponent from "./Components/Component";
+import DynamicInlineStyleComponent from "./Components/DynamicInlineStyleComponent";
+import StyledComponent from "./Components/StyledComponent";
 
 function App() {
     return (
-        <ListComponent/>
+        <div>
+            <DynamicInlineStyleComponent/>
+            <StyledComponent/>
+        </div>
     );
 }
 

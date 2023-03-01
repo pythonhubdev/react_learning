@@ -31,3 +31,10 @@
     margin-right: 8px;
 }
 
+.valid-desc {
+    color: white;
+}
+
+.invalid-desc {
+    color: wheat;
+}
